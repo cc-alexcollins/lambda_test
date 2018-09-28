@@ -4,7 +4,6 @@ const request = require('sync-request');
 const WEBHOOK_URL = process.env.WEBHOOK_URL;
 
 exports.lambda_test = function(event, context, callback) {
-  const headers = JSON.parse(event.headers);
   // const eventName = headers["X-GitHub-Event"];
 
   console.log('Handling event: ', eventName);
@@ -16,7 +15,7 @@ exports.lambda_test = function(event, context, callback) {
     const repo = repository.name;
 
     try {
-      console.log(headers);
+      console.log('headers: ', event.headers);
       console.log(body);
       run(repo, body);
     } catch (err) {
