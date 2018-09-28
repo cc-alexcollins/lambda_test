@@ -1,0 +1,15 @@
+#serverless.yml
+
+service: lambda-test
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  environment:
+    WEBHOOK_URL: "https://www.google.com"
+
+functions:
+  lambdatest:
+    handler: handler.lambda_test
+    events:
+      - http: POST lambda_test
