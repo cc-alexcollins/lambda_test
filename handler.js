@@ -7,7 +7,7 @@ exports.lambda_test = function(event, context, callback) {
   try {
     console.log('event: \n', event);
 
-    const headers = JSON.parse(event.headers);
+    const headers = event.headers;
 
     // console.log('Handling event: ', eventName);
     // if (eventName = 'pull_request') {

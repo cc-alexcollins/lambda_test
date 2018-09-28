@@ -109,7 +109,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/lambda-test/dev/1538174517415-2018-09-28T22:41:57.415Z/lambda-test.zip"
+                "S3Key": "serverless/lambda-test/dev/1538175464646-2018-09-28T22:57:44.646Z/lambda-test.zip"
               },
               "FunctionName": "lambda-test-dev-lambdatest",
               "Handler": "handler.lambda_test",
@@ -133,14 +133,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "LambdatestLambdaVersionkf0SbEhAcPz1kfUgvgNT62bGOdAcl7fVU26sjcI6fzQ": {
+          "LambdatestLambdaVersionaqPnoV29hbkKsQK74zl1tBEYMMuEkyuGHvEW89sXsPw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "LambdatestLambdaFunction"
               },
-              "CodeSha256": "buN2vV35YrFepwR/W3VeGHKitR70LRJnCRhIjZA7vJA="
+              "CodeSha256": "wXqO+UIvMVhXM50Oc120FyH1NLXgSdGmu/6GUbqoS0s="
             }
           },
           "ApiGatewayRestApi": {
@@ -212,7 +212,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1538174517432": {
+          "ApiGatewayDeployment1538175464660": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -281,7 +281,7 @@
           "LambdatestLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "LambdatestLambdaVersionkf0SbEhAcPz1kfUgvgNT62bGOdAcl7fVU26sjcI6fzQ"
+              "Ref": "LambdatestLambdaVersionaqPnoV29hbkKsQK74zl1tBEYMMuEkyuGHvEW89sXsPw"
             }
           },
           "ServiceEndpoint": {
@@ -343,7 +343,7 @@
     "artifact": "/Users/alex/Documents/Git/lambda_test/.serverless/lambda-test.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/lambda-test/dev/1538174517415-2018-09-28T22:41:57.415Z",
+    "artifactDirectoryName": "serverless/lambda-test/dev/1538175464646-2018-09-28T22:57:44.646Z",
     "artifact": "lambda-test.zip"
   }
 }
