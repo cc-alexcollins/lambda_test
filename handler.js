@@ -6,7 +6,7 @@ const WEBHOOK_URL = process.env.WEBHOOK_URL;
 exports.lambda_test = function(event, context, callback) {
   // const eventName = headers["X-GitHub-Event"];
 
-  console.log('Handling event: ', eventName);
+  // console.log('Handling event: ', eventName);
 
   // if (eventName = 'pull_request') {
     const body = JSON.parse(event.body);
