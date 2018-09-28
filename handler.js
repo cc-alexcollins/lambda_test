@@ -11,7 +11,7 @@ exports.lambda_test = function(event, context, callback) {
     const eventName = headers['X-GitHub-Event'];
 
     console.log('Handling event: ', eventName);
-    // if (eventName = 'pull_request') {
+    if (eventName = 'pull_request') {
       const body = JSON.parse(event.body);
       const { repository, sender } = body;
 
@@ -19,7 +19,7 @@ exports.lambda_test = function(event, context, callback) {
       console.log('headers: ', headers);
       console.log(body);
       run(repo, body);
-    // }
+    }
   } catch (err) {
     console.log(err);
     callback(err);

@@ -92,7 +92,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/lambda-test/dev/1538175705270-2018-09-28T23:01:45.270Z/lambda-test.zip"
+          "S3Key": "serverless/lambda-test/dev/1538175842544-2018-09-28T23:04:02.544Z/lambda-test.zip"
         },
         "FunctionName": "lambda-test-dev-lambdatest",
         "Handler": "handler.lambda_test",
@@ -116,14 +116,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "LambdatestLambdaVersionI1tNGlrSJgQrFz2LNWggjteWZUPAlEtIN4G6LIFQ4": {
+    "LambdatestLambdaVersionMEO4t7fwHcAFEtwd6ddOWQA5EVwiq6XveKOfLIHUrjk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "LambdatestLambdaFunction"
         },
-        "CodeSha256": "6WHvc/GAG5Yz2vljHn/cr9T5aWekuBu6hSi1LIi5YA0="
+        "CodeSha256": "6ZnA18ZDk7QryH5dULLdfsAkS4Q3CZc6qsnEmFRxxNY="
       }
     },
     "ApiGatewayRestApi": {
@@ -195,7 +195,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1538175705288": {
+    "ApiGatewayDeployment1538175842561": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -264,7 +264,7 @@
     "LambdatestLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "LambdatestLambdaVersionI1tNGlrSJgQrFz2LNWggjteWZUPAlEtIN4G6LIFQ4"
+        "Ref": "LambdatestLambdaVersionMEO4t7fwHcAFEtwd6ddOWQA5EVwiq6XveKOfLIHUrjk"
       }
     },
     "ServiceEndpoint": {
