@@ -11,7 +11,7 @@ exports.lambda_test = function(event, context, callback) {
     const eventName = headers['X-GitHub-Event'];
 
     console.log('Handling event: ', eventName);
-    if (eventName = 'pull_request') {
+    if (eventName === 'pull_request') {
       const body = JSON.parse(event.body);
       const { repository, sender } = body;
 
