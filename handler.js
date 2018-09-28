@@ -4,17 +4,26 @@ const request = require('sync-request');
 const WEBHOOK_URL = process.env.WEBHOOK_URL;
 
 exports.lambda_test = function(event, context, callback) {
-  const body = JSON.parse(event.body);
-  const { repository, sender } = body;
+  const headers = JSON.parse(event.headers);
+  // const eventName = headers["X-GitHub-Event"];
 
-  const repo = repository.name;
+  console.log('Handling event: ', eventName);
 
-  try {
-    run(repo, body);
-  } catch (err) {
-    console.log(err);
-    callback(err);
-  }
+  // if (eventName = 'pull_request') {
+    const body = JSON.parse(event.body);
+    const { repository, sender } = body;
+
+    const repo = repository.name;
+
+    try {
+      console.log(headers);
+      console.log(body);
+      run(repo, body);
+    } catch (err) {
+      console.log(err);
+      callback(err);
+    }
+  // }
 
   const response = {
     statusCode: 200,
@@ -26,6 +35,5 @@ exports.lambda_test = function(event, context, callback) {
 };
 
 function run(repo, body) {
-  console.log(repo);
-  console.log(body);
+  console.log('run body function');
 }
