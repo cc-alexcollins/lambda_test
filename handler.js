@@ -10,7 +10,7 @@ exports.lambda_test = function(event, context, callback) {
   const repo = repository.name;
 
   try {
-    run(repo);
+    run(repo, body);
   } catch (err) {
     console.log(err);
     callback(err);
@@ -25,6 +25,7 @@ exports.lambda_test = function(event, context, callback) {
   callback(null, response);
 };
 
-function run(repo) {
+function run(repo, body) {
   console.log(repo);
+  console.log(body);
 }
