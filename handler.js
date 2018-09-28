@@ -16,8 +16,8 @@ exports.lambda_test = function(event, context, callback) {
       const { repository, sender } = body;
 
       const repo = repository.name;
-      console.log('headers: ', headers);
-      console.log(body);
+      console.log('headers:\n', headers);
+      console.log('body:\n', body);
       run(repo, body);
     }
   } catch (err) {
