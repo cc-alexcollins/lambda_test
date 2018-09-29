@@ -1,6 +1,7 @@
 'use strict';
 
 const request = require('sync-request');
+const parse_diff = require('parse-diff');
 const WEBHOOK_URL = process.env.WEBHOOK_URL;
 
 exports.lambda_test = function(event, context, callback) {
@@ -50,6 +51,6 @@ function run(diff_url) {
   const diff = res.getBody();
   console.log('diff contents:\n', diff);
 
-  const files = parse(diff);
+  const files = parse_diff(diff);
   console.log('files:\n', files);
 }
