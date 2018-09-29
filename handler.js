@@ -10,15 +10,23 @@ exports.lambda_test = function(event, context, callback) {
     const headers = event.headers;
     const eventName = headers['X-GitHub-Event'];
 
-    console.log('Handling event: ', eventName);
+    console.log('Handling GitHub Event: ', eventName);
     if (eventName === 'pull_request') {
       const body = JSON.parse(event.body);
-      const { repository, sender } = body;
-
-      const repo = repository.name;
       console.log('headers:\n', headers);
       console.log('body:\n', body);
-      run(repo, body);
+
+      console.log('Handling PR Action: ', body.action);
+      if (body.action === 'closed') {
+        const pr = body.pull_request;
+
+        console.log('PR Merged Status: ', pr.merged);
+        if (pr.merged) {
+          const links = pr._links;
+          console.log('links:\n', links.commits);
+          run();
+        }
+      }
     }
   } catch (err) {
     console.log(err);
@@ -34,6 +42,6 @@ exports.lambda_test = function(event, context, callback) {
   callback(null, response);
 };
 
-function run(repo, body) {
+function run() {
   console.log('run body function');
 }
