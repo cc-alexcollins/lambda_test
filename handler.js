@@ -33,7 +33,7 @@ exports.lambda_test = function(event, context, callback) {
     console.log(err);
     callback(err);
   }
-  
+
 
   const response = {
     statusCode: 200,
@@ -48,7 +48,7 @@ function run(diff_url) {
   console.log('upload files from diff: ', diff_url);
 
   const res = request('GET', diff_url);
-  const diff = res.getBody();
+  const diff = res.getBody().toString();
   console.log('diff contents:\n', diff);
 
   const files = parse_diff(diff);
