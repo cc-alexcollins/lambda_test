@@ -22,9 +22,9 @@ exports.lambda_test = function(event, context, callback) {
 
         console.log('PR Merged Status: ', pr.merged);
         if (pr.merged) {
-          const links = pr._links;
-          console.log('links:\n', links.commits);
-          run();
+          const diff_url = pr.diff_url;
+          console.log('diff url:\n', diff_url);
+          run(diff_url);
         }
       }
     }
@@ -42,6 +42,13 @@ exports.lambda_test = function(event, context, callback) {
   callback(null, response);
 };
 
-function run() {
-  console.log('run body function');
+function run(diff_url) {
+  console.log('upload files from diff: ', diff_url);
+
+  const res = request('GET', diff_url);
+  const diff = res.getBody();
+  console.log('diff contents:\n', diff);
+
+  const files = parse(diff);
+  console.log('files:\n', files);
 }
