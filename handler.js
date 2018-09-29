@@ -32,6 +32,7 @@ exports.lambda_test = function(event, context, callback) {
     console.log(err);
     callback(err);
   }
+  
 
   const response = {
     statusCode: 200,
