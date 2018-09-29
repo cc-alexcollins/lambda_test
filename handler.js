@@ -53,4 +53,8 @@ function run(diff_url) {
 
   const files = parse_diff(diff);
   console.log('files:\n', files);
+
+  files.forEach(function(file) {
+    console.log('Uploading file: ', file.to);
+  });
 }
