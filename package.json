@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/cc-alexcollins/lambda_test#readme",
   "dependencies": {
+    "parse-diff": "^0.4.2",
     "sync-request": "^6.0.0"
   }
 }
